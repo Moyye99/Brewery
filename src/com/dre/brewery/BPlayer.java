@@ -484,17 +484,19 @@ public class BPlayer {
 			}
 
 		} else if (offlineDrunk - drunkeness >= 30) {
-			Location randomLoc = Wakeup.getRandom(player.getLocation());
-			if (randomLoc != null) {
-				if (!player.hasPermission("brewery.bypass.teleport")) {
-					player.teleport(randomLoc);
-					P.p.msg(player, P.p.languageReader.get("Player_Wake"));
-				}
+			if (BConfig.enableWake) {
+				Location randomLoc = Wakeup.getRandom(player.getLocation());
+				if (randomLoc != null) {
+					if (!player.hasPermission("brewery.bypass.teleport")) {
+						player.teleport(randomLoc);
+						P.p.msg(player, P.p.languageReader.get("Player_Wake"));
+					}
 			}
 			offlineDrunk = 0;
 			syncToSQL(false);
 		}
 		offlineDrunk = 0;
+	}
 	}
 
 	public void disconnecting() {

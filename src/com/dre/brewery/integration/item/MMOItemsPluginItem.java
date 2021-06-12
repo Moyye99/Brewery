@@ -3,8 +3,10 @@ package com.dre.brewery.integration.item;
 import com.dre.brewery.P;
 import com.dre.brewery.filedata.BConfig;
 import com.dre.brewery.recipe.PluginItem;
-import net.mmogroup.mmolib.api.item.NBTItem;
+
 import org.bukkit.inventory.ItemStack;
+
+import io.lumine.mythic.lib.api.item.NBTItem;
 
 public class MMOItemsPluginItem extends PluginItem {
 
